@@ -69,6 +69,8 @@ $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id
         </div>
 
         </div>
+
+        
         
         
     </div>

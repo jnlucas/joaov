@@ -52,6 +52,9 @@ if($_POST){
             <div class="card">
 
                 <div class="card-body">
+                    <div class="row" style="text-align: left;width: 100%;padding-left: 37%;/* float: left; */">
+                    <img src="img/logo.avif" style="width:150px">
+                    </div>
                     <form method="post">
                     <div class="form-group">
                         <label>Email</label>
@@ -67,7 +70,7 @@ if($_POST){
                     </div>
                     <div class="row" style="margin-top:10px">
                         <div class="form-group">
-                            <input type="submit" name="enviar" value="Logar" class="btn btn-primary" />
+                            <input type="submit" name="enviar" value="Logar" class="btn btn-warning" />
                         </div>
                     </div>
                 </form>
