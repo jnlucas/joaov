@@ -28,7 +28,7 @@ $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"> <span class="badge bg-info">Saldo &nbsp; &nbsp; &nbsp; &nbsp; R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></span> <span class="badge bg-success"> Sacar</span></a>
+    <a class="navbar-brand" href="#"> <span class="badge bg-info">Saldo &nbsp; &nbsp; &nbsp; &nbsp; R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></span> <span class="badge bg-success sacar"> Sacar</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,6 +53,20 @@ $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id
 
   <div class="container" style="margin-top:20px">
     
+  <div class="modal fade" id="modal-conteudo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p> Transferencia pix realizada</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <div class="row">
         <div class="col-sm-4">
         <div class="card" >
@@ -93,6 +107,11 @@ $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id
                         
                     },2000)
                 })
+            })
+
+            $("body").on("click",".sacar",function(){
+                
+                $("#modal-conteudo").modal("show");
             })
         })
 
