@@ -44,7 +44,7 @@ if($_POST){
     <script src="js/jquery.js"></script>
 </head>
   <body>
-  <div class="container">
+  <div class="container" style="padding-top:25%">
     <div class="row" style="margin-top:50px">
         <div class="col-sm-3"></div>
 

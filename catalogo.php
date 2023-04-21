@@ -48,6 +48,9 @@ $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id
           <a class="nav-link" href="pix.php">Cadastrar PIX</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="progresso.php">Progresso</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="sair.php">Sair</a>
         </li>
         

@@ -39,7 +39,7 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pix</title>
+    <title>Progresso</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="js/jquery.js"></script>
 </head>
@@ -51,7 +51,7 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"> <span style="background-color: #ffc432; color:#000" class="badge">Saldo &nbsp; &nbsp; &nbsp; &nbsp; R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></span> <span class="badge bg-success sacar"> Sacar</span></a>
+    <a class="navbar-brand" href="#"> <!--<span style="background-color: #ffc432; color:#000" class="badge">Saldo &nbsp; &nbsp; &nbsp; &nbsp; R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></span>--> <span class="badge bg-success sacar"> Sacar</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -77,45 +77,51 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
 
 
 
-<div class="container" style="margin-top:20%">
+  <div class="container" style="margin-top:25%">
     
-    <div class="modal fade" id="modal-conteudo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-          <h2>Limite de saque: R$2500</h2>
-          <p>Caso você tenha o saldo mínimo, a transferencia pix foi realizada para a chave cadastrada. Caso não tenha a quantia, volte amanhã para avaliar mais fotos!</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+  <div class="modal fade" id="modal-conteudo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p> Transferencia pix realizada</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>
   <div class="row">
         <div class="col-sm-12">
-        <div class="card" >
-        <div class="card-body">
-            <p class="card-text">Cadastre sua chave PIX</p>
-            <form method="post">
-            <div>    
-            <input type="text" name="pix" class="form-control" placeholder="cadastre sua chave pix" value="<?php echo $user[0]["pix"]?>" />
-                <select style="margin-top:10px" class="w-100">
-                  <option value="">Email</option>
-                  <option value="">Telefone</option>
-                  <option value="">CPF</option>
-                </select>
-                <input style="background-color:#ffc432;color:#000;margin-top:10px" type="submit" class="btn btn-success w-100" style="margin-top:10px" value="Salvar" />
-            </form>
-        </div>
-        </div>
+            <div class="card" >
+                <div class="card-body">
+                    <p class="card-text">Progresso:</p>
+                    <span style="background-color: #ffc432; color:#000" class="badge">Saldo atual: &nbsp; &nbsp; &nbsp; &nbsp; R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></span>
+                    <span style="background-color: green; color:#fff" class="badge">Mínimo: R$2500,00</span>
+                    
+                    <div method="post">
+                        <div class="barra" style="width:100%;height:30px;border-radius:10px;background-color:#ccc;margin-top:20px">
+                            <div style="height:100%;width:10%;border-radius:10px;background-color:#2df20f;transition:all 300ms;"></div>
+                        </div>
+
+                        <input style="background-color:#2df20f;color:#000;margin-top:10px" type="submit" class="btn btn-success w-100" style="margin-top:10px" value="Resgatar recompensa" />
+                        
+                        
+                    </div>
+                         
+                </div>
+            </div>
+
+            <input style="background-color:#ffc432;color:#000;margin-top:10px;height:60px" type="submit" class="btn btn-success w-100" style="margin-top:10px" value="Indique e ganhe" />
 
         </div>
         
         
     </div>
   </div>  
-    <script>
+
+  
+    <script> 
 
         $(function(){
             $("body").on("click",".acao",function(){
