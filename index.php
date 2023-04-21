@@ -44,17 +44,19 @@ if($_POST){
     <script src="js/jquery.js"></script>
 </head>
   <body>
-  <div class="container">
+  <div class="container" style="padding-top:25%">
     <div class="row" style="margin-top:50px">
         <div class="col-sm-3"></div>
+
+        <div class="row" style="text-align: left;width: 100%;padding-left: 25%;padding-bottom:10px">
+                    <img src="img/logo.png" style="width:200px;">
+                    </div>
 
         <div class="col-sm-6">
             <div class="card">
 
                 <div class="card-body">
-                    <div class="row" style="text-align: left;width: 100%;padding-left: 37%;/* float: left; */">
-                    <img src="img/logo.avif" style="width:150px">
-                    </div>
+                    
                     <form method="post">
                     <div class="form-group">
                         <label>Email</label>
@@ -66,11 +68,11 @@ if($_POST){
                     </div>
                     <div class="row form-group">
                         <label > 
-                        <input type="checkbox" class="form-checkbox" name="novologin" value="1" /> Não tem cadastro? marque aqui para se cadastrar. </label>
+                        <input type="checkbox" class="form-checkbox" name="novologin" value="1" /> Não tem cadastro? Marque aqui para se cadastrar. </label>
                     </div>
                     <div class="row" style="margin-top:10px">
-                        <div class="form-group">
-                            <input type="submit" name="enviar" value="Logar" class="btn btn-warning" />
+                        <div class="form-group" style="">
+                            <input type="submit" name="enviar" value="Login" class="btn btn-warning w-100" />
                         </div>
                     </div>
                 </form>

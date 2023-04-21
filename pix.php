@@ -45,9 +45,13 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
 </head>
   <body>
 
+  <div class="row" style="text-align: left;width: 100%;padding-left: 25%;padding-bottom:10px;margin-top:20px;">
+                    <img src="img/logo.png" style="width:200px;">
+                    </div>
+
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"> <span class="badge bg-info">Saldo &nbsp; &nbsp; &nbsp; &nbsp; R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></span> <span class="badge bg-success sacar"> Sacar</span></a>
+    <a class="navbar-brand" href="#"> <span style="background-color: #ffc432; color:#000" class="badge">Saldo &nbsp; &nbsp; &nbsp; &nbsp; R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></span> <span class="badge bg-success sacar"> Sacar</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,7 +61,10 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
           <a class="nav-link active" aria-current="page" href="catalogo.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pix.php">pix</a>
+          <a class="nav-link" href="pix.php">Cadastrar PIX</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="progresso.php">Progresso</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="sair.php">Sair</a>
@@ -70,28 +77,35 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
 
 
 
-  <div class="container" style="margin-top:20px">
+<div class="container" style="margin-top:20%">
     
-  <div class="modal fade" id="modal-conteudo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <p> Transferencia pix realizada</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <div class="modal fade" id="modal-conteudo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h2>Limite de saque: R$2500</h2>
+          <p>Caso você tenha o saldo mínimo, a transferencia pix foi realizada para a chave cadastrada. Caso não tenha a quantia, volte amanhã para avaliar mais fotos!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
   <div class="row">
         <div class="col-sm-12">
         <div class="card" >
         <div class="card-body">
-            <p class="card-text">Cadastre sua chave pix</p>
+            <p class="card-text">Cadastre sua chave PIX</p>
             <form method="post">
-                <input type="text" name="pix" class="form-control" placeholder="cadastre sua chave pix" value="<?php echo $user[0]["pix"]?>" />
-                <input type="submit" class="btn btn-success" style="margin-top:10px" value="Cadastrar" />
+            <div>    
+            <input type="text" name="pix" class="form-control" placeholder="cadastre sua chave pix" value="<?php echo $user[0]["pix"]?>" />
+                <select style="margin-top:10px" class="w-100">
+                  <option value="">Email</option>
+                  <option value="">Telefone</option>
+                  <option value="">CPF</option>
+                </select>
+                <input style="background-color:#ffc432;color:#000;margin-top:10px" type="submit" class="btn btn-success w-100" style="margin-top:10px" value="Salvar" />
             </form>
         </div>
         </div>
