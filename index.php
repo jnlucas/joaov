@@ -5,6 +5,17 @@ include_once "banco.php";
 
 if($_POST){
 
+    if($_POST['novologin']){
+        try{
+            $sql = "INSERT INTO usuario (nome, email, senha) VALUES (?,?,?)";
+            $stmt= $pdo->prepare($sql);
+            $stmt->execute(["", $_POST["email"], $_POST["senha"]]);
+            
+        }catch(Exception $e){
+            print_r($e->getMessage());
+        }
+    }
+
 
     $stmt = $pdo->prepare("SELECT * FROM usuario WHERE email=:email and senha =:senha");
     $stmt->execute(['email' => $_POST['email'], 'senha' => $_POST['senha']]); 
@@ -16,6 +27,8 @@ if($_POST){
 
     if($dados){
         $_SESSION["usuario"] = $dados[0];
+    }else{
+        echo "<script>alert('Usuário ou senha estão errados'); window.location='index.php'</script>";
     }
     header("location:catalogo.php");
 }
@@ -32,7 +45,7 @@ if($_POST){
 </head>
   <body>
   <div class="container">
-    <div class="row">
+    <div class="row" style="margin-top:50px">
         <div class="col-sm-3"></div>
 
         <div class="col-sm-6">
@@ -47,6 +60,10 @@ if($_POST){
                     <div class="form-group">
                         <label>Senha</label>
                         <input type="password" name="senha" class="form-control" />
+                    </div>
+                    <div class="row form-group">
+                        <label > 
+                        <input type="checkbox" class="form-checkbox" name="novologin" value="1" /> Não tem cadastro? marque aqui para se cadastrar. </label>
                     </div>
                     <div class="row" style="margin-top:10px">
                         <div class="form-group">

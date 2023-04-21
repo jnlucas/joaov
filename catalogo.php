@@ -20,7 +20,7 @@ $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Catalogo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="js/jquery.js"></script>
 </head>
@@ -61,6 +61,10 @@ $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id
             <p class="card-text">Você gostou desse look?.</p>
             <a href="#" class="btn btn-success acao" data-produto="1" data-value="gostei">Sim</a>
             <a href="#" class="btn btn-danger  acao" data-produto="1" data-value="nao gostei">Não</a>
+
+            <div class="alert alert-success" style="display:none" role="alert">
+            OK! cadastro realizado com sucesso.
+            </div>
         </div>
         </div>
 
@@ -81,7 +85,11 @@ $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id
                 }
                 
                 $.post("acao.php",dados,function(retorno){
-
+                    $(".alert").fadeIn();
+                    setTimeout(function(){
+                        $(".alert").fadeOut();
+                        
+                    },2000)
                 })
             })
         })
