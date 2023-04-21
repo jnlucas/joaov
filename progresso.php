@@ -32,7 +32,7 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
     foreach ($data as $row) {
          $dados[] = $row;
     }
-    
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -100,9 +100,9 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
                     <span style="background-color: green; color:#fff" class="badge">Mínimo: R$2500,00</span>
                     
                     <div method="post">
-                        <div class="barra" style="width:100%;height:30px;border-radius:10px;background-color:#ccc;margin-top:20px">
-                            <div style="height:100%;width:10%;border-radius:10px;background-color:#2df20f;transition:all 300ms;"></div>
-                        </div>
+                    <div class="progress" style="margin-top:10px;height:30px">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: <?php echo "12" .'%';?>" aria-valuenow="0" aria-valuemin="0" aria-valuemax="2500"></div>
+                    </div>
 
                         <input style="background-color:#2df20f;color:#000;margin-top:10px" type="submit" class="btn btn-success w-100" style="margin-top:10px" value="Resgatar recompensa" />
                         
