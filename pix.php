@@ -5,14 +5,33 @@ if(!$_SESSION["usuario"]){
     header("location:index.php");
 }
 
-$stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id=:usuario and gostei='gostei' " );
+if($_POST){
+    try{
+        $sql = "update usuario set pix=? where id=".$_SESSION["usuario"]["id"];
+        $stmt= $pdo->prepare($sql);
+        $stmt->execute([$_POST["pix"]]);
+        
+    }catch(Exception $e){
+        print_r($e->getMessage());
+    }
+}
+
+
+$stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
+    $stmt->execute(['usuario' => $_SESSION['usuario']["id"]]); 
+    $user = [];
+    $data = $stmt->fetchAll();
+    foreach ($data as $row) {
+         $user[] = $row;
+    }
+
+    $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id=:usuario and gostei='gostei' " );
     $stmt->execute(['usuario' => $_SESSION['usuario']["id"]]); 
     $dados = [];
     $data = $stmt->fetchAll();
     foreach ($data as $row) {
          $dados[] = $row;
     }
-
     
 ?>
 <!doctype html>
@@ -54,13 +73,14 @@ $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id
   <div class="container" style="margin-top:20px">
     
   <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-12">
         <div class="card" >
-        <img src="img/foto1.webp" class="card-img-top" alt="...">
         <div class="card-body">
-            <p class="card-text">Você gostou desse look?.</p>
-            <a href="#" class="btn btn-success acao" data-produto="1" data-value="gostei">Sim</a>
-            <a href="#" class="btn btn-danger  acao" data-produto="1" data-value="nao gostei">Não</a>
+            <p class="card-text">Cadastre sua chave pix</p>
+            <form method="post">
+                <input type="text" name="pix" class="form-control" placeholder="cadastre sua chave pix" value="<?php echo $user[0]["pix"]?>" />
+                <input type="submit" class="btn btn-success" style="margin-top:10px" value="Cadastrar" />
+            </form>
         </div>
         </div>
 
