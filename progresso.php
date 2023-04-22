@@ -43,6 +43,8 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="js/jquery.js"></script>
 </head>
+
+
 <body style="background-color:#000">
 
 <div class="row" style="text-align: left;width: 100%;padding-left: 25%;padding-bottom:10px;margin-top:20px;">
@@ -100,8 +102,8 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
             <div class="card" style="border-radius:25px;border-color:#292929" >
                 <div style="background-color:#292929;border-radius:20px"class="card-body">
                     <p style="color:#ffc432" class="card-text"><b>Seu progresso atual:</b></p>
-                    <span style="background-color: #ffc432; color:#000" class="badge">Saldo: &nbsp; &nbsp; &nbsp; &nbsp; R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></span>
-                    <span style="background-color: green; color:#fff" class="badge">Mínimo: R$2500,00</span>
+                    <span style="background-color: #ffc432; color:#000" class="badge">R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></span>
+                    <span style="background-color: green; color:#fff; margin-left:49%" class="badge">R$2500,00</span>
                     
                     <div method="post">
                     <div class="progress" style="margin-top:10px;height:30px">
@@ -116,38 +118,40 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
                 </div>
             </div>
 
-            <input href="" style="background-color:#000;border-color:#ffc432;border-width:3px;border-radius:15px;color:#fff;margin-top:20px;height:60px;font-weight:bold;font-size:27px" type="button" class="btn btn-success w-100" style="margin-top:10px" value="INDIQUE E GANHE" />
 
+            <a href="https://go.perfectpay.com.br/PPU38CLUDDP" class="w-100" style=""><button style="background-color:#000;border-color:#ffc432;border-width:3px;border-radius:15px;color:#fff;margin-top:20px;height:60px;font-weight:bold;font-size:27px;margin-left:8%">INDIQUE E GANHE</button></a>
+            <p class="" style="color:#ffc432;margin-left:14%;margin-top:10px"><i>Ganhe R$100 para cada indicação!</i></p>
         </div>
         
         
     </div>
   </div>  
 
-  
-    <script> 
 
-        $(function(){
-            $("body").on("click",".acao",function(){
-                var produto = $(this).attr("data-produto");
-                var valor = $(this).attr("data-value");
-                var dados = {
-                    produto: produto,
-                    valor: valor
-                }
-                
-                $.post("acao.php",dados,function(retorno){
+  <script> 
 
-                })
-            })
+$(function(){
+    $("body").on("click",".acao",function(){
+        var produto = $(this).attr("data-produto");
+        var valor = $(this).attr("data-value");
+        var dados = {
+            produto: produto,
+            valor: valor
+        }
+        
+        $.post("acao.php",dados,function(retorno){
 
-            $("body").on("click",".sacar",function(){
-                
-                $("#modal-conteudo").modal("show");
-            })
         })
+    })
 
-    </script>
+    $("body").on("click",".sacar",function(){
+        
+        $("#modal-conteudo").modal("show");
+    })
+})
+
+</script>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
 </html>

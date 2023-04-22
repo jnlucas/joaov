@@ -5,7 +5,7 @@ if(!$_SESSION["usuario"]){
     header("location:index.php");
 }
 
-$stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id=:usuario and gostei='gostei' " );
+$stmt = $pdo->prepare("SELECT count(10) qtd FROM usuario_produto WHERE usuario_id=:usuario and gostei='gostei' " );
     $stmt->execute(['usuario' => $_SESSION['usuario']["id"]]); 
     $dados = [];
     $data = $stmt->fetchAll();
@@ -398,6 +398,246 @@ $stmt = $pdo->prepare("SELECT count(1) qtd FROM usuario_produto WHERE usuario_id
                     <img style="width: 20px;" src="img/like.png">
                   </a>
                   <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="18" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/20.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="19" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="19" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/5.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="20" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="20" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/21.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="21" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="21" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/22.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="22" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="22" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/23.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="23" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="23" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/42.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="24" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="24" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/25.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="25" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="25" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/26.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="26" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="26" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/27.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="27" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="27" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/28.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="28" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="28" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/40.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="29" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="29" data-value="nao gostei">
+                    <img style="width: 20px;" src="img/unlike.png">
+                  </a>
+
+                  <div class="alert alert-success mt-3" style="display:none" role="alert">
+                  OK! Obrigado pelo voto.
+                  </div>
+                </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4" style="margin-top:30px" >
+          <div class="card" style="background-color:#000" >
+              <img src="img/30.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="30" data-value="gostei">
+                    <img style="width: 20px;" src="img/like.png">
+                  </a>
+                  <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="30" data-value="nao gostei">
                     <img style="width: 20px;" src="img/unlike.png">
                   </a>
 
