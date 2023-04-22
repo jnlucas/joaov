@@ -105,7 +105,7 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
 
                 <img src="img/account.png" style="width:75px;margin-left:38%">
               
-                <input style="background-color:#292929; border:none; color:white; margin-top:15px" type="button" name="pix" class="form-control" value="teste@teste.com" />
+                <input style="background-color:#292929; border:none; color:white; margin-top:15px" type="button" name="pix" class="form-control" value="<?php echo $_SESSION['usuario']['email']?>" />
  
               </form>
           </div>

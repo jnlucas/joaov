@@ -33,6 +33,10 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
          $dados[] = $row;
     }
 
+    $tamanho = $dados[0]['qtd'] * 100 / 2500;
+
+    
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -107,7 +111,7 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
                     
                     <div method="post">
                     <div class="progress" style="margin-top:10px;height:30px">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: <?php echo "12" .'%';?>" aria-valuenow="0" aria-valuemin="0" aria-valuemax="2500"></div>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: <?php echo $tamanho .'%';?>" aria-valuenow="0" aria-valuemin="0" aria-valuemax="2500"></div>
                     </div>
 
                         <input style="background-color:#2df20f;color:#fff;margin-top:10px;border-radius:20px;font-weight:bold" type="submit" class="btn btn-success w-100 sacar" style="margin-top:10px" value="RESGATAR RECOMPENSA" />

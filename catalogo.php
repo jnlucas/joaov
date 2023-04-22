@@ -59,10 +59,18 @@ $stmt = $pdo->prepare("SELECT count(10) qtd FROM usuario_produto WHERE usuario_i
   </div>
 </nav>
 
-
+<style>
+    .alerta2{
+        position: absolute;
+        margin-top:20px;
+    }
+</style>
 
   <div class="container" style="margin-top:20px">
-    
+  <div class="alert alert-success mt-3 alerta2" style="display:none;z-index: 10000;position: fixed;" role="alert">
+    OK! Obrigado pelo voto.
+   </div>
+
   <div class="modal fade" id="modal-conteudo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -670,9 +678,9 @@ $stmt = $pdo->prepare("SELECT count(10) qtd FROM usuario_produto WHERE usuario_i
                 }
                 
                 $.post("acao.php",dados,function(retorno){
-                    $(".alert").fadeIn();
+                    $(".alerta2").fadeIn();
                     setTimeout(function(){
-                        $(".alert").fadeOut();
+                        $(".alerta2").fadeOut();
                         
                     },2000)
                 })
