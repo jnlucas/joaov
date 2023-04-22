@@ -43,36 +43,36 @@ if($_POST){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="js/jquery.js"></script>
 </head>
-  <body>
+  <body style="background-color:#000">
   <div class="container" style="padding-top:25%">
     <div class="row" style="margin-top:50px">
         <div class="col-sm-3"></div>
 
         <div class="row" style="text-align: left;width: 100%;padding-left: 25%;padding-bottom:10px">
-                    <img src="img/logo.png" style="width:200px;">
+                    <img src="img/white-logo.png" style="width:200px;">
                     </div>
 
         <div class="col-sm-6">
-            <div class="card">
+            <div style="border:none"  class="card">
 
-                <div class="card-body">
+                <div class="card-body bg-black">
                     
                     <form method="post">
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" name="email" class="form-control" />
+                        
+                        <input placeholder="Email" style="background-color:grey; border:none" type="text" name="email" class="form-control" />
                     </div>
-                    <div class="form-group">
-                        <label>Senha</label>
-                        <input type="password" name="senha" class="form-control" />
+                    <div style="margin-top:20px" class="form-group">
+                        
+                        <input placeholder="Senha" style="background-color:grey; border:none" type="password" name="senha" class="form-control" />
                     </div>
-                    <div class="row form-group">
-                        <label > 
-                        <input type="checkbox" class="form-checkbox" name="novologin" value="1" /> Não tem cadastro? Marque aqui para se cadastrar. </label>
+                    <div class="row form-group " style="margin-top:8px">
+                        <label style="color:white" > 
+                        <input type="checkbox" class="form-checkbox" name="novologin" value="1" /> <i>Não tem cadastro? Marque aqui para se cadastrar.</i> </label>
                     </div>
                     <div class="row" style="margin-top:10px">
                         <div class="form-group" style="">
-                            <input type="submit" name="enviar" value="Login" class="btn btn-warning w-100" />
+                            <input style="border-radius:20px; font-size:30px"  type="submit" name="enviar" value="LOGIN" class="btn btn-warning w-100" />
                         </div>
                     </div>
                 </form>
