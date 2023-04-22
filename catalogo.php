@@ -85,6 +85,20 @@ $stmt = $pdo->prepare("SELECT count(10) qtd FROM usuario_produto WHERE usuario_i
   </div>
 </div>
 
+<div class="modal fade" id="modal-limite" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2>Limite diário atingido</h2>
+        <p>Realize Login após 24h para continuar avaliando mais fotos. Obrigado!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <div class="row">
         <div class="col-sm-4" >
@@ -642,7 +656,7 @@ $stmt = $pdo->prepare("SELECT count(10) qtd FROM usuario_produto WHERE usuario_i
               <img src="img/30.png" class="card-img-top" alt="...">
                 <div class="card-body">
                 
-                  <a style="border-radius:15px" href="#" class="btn btn-success acao" data-produto="30" data-value="gostei">
+                  <a style="border-radius:15px" href="#" class="btn btn-success acao limite" data-produto="30" data-value="">
                     <img style="width: 20px;" src="img/like.png">
                   </a>
                   <a style="margin-left:10px;border-radius:15px" href="#" class="btn btn-danger  acao" data-produto="30" data-value="nao gostei">
@@ -689,6 +703,11 @@ $stmt = $pdo->prepare("SELECT count(10) qtd FROM usuario_produto WHERE usuario_i
             $("body").on("click",".sacar",function(){
                 
                 $("#modal-conteudo").modal("show");
+            })
+
+            $("body").on("click",".limite",function(){
+                
+                $("#modal-limite").modal("show");
             })
         })
 

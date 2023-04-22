@@ -57,7 +57,7 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
 
 <nav style="background-color:#000" class="navbar navbar-expand-lg bg-body-black">
 <div style="background-color:#000" class="container-fluid">
-  <a class="navbar-brand" href="#"> <span style="background-color: #292929; color:#ffc432; border-radius:20px" class="badge"><b>Progresso &nbsp; &nbsp; &nbsp; &nbsp;</b> <i style="margin-left:30px;color:grey"> R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></i></span> </a>
+  <a class="navbar-brand" href="#"> <span style="background-color: #292929; color:#ffc432; border-radius:20px" class="badge"><b>Progresso &nbsp; &nbsp; &nbsp; &nbsp;</b> <i style="margin-left:30px;color:grey"> R$ <?php echo number_format(($dados[0]['qtd'] * 10), 2, ',', ' ');?></i></span> </a>
   <button style="background-color:grey;margin-right:10px" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span style="background-color:grey" class="navbar-toggler-icon"></span>
   </button>
@@ -92,8 +92,8 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-        <h2>Limite de saque: R$2500</h2>
-        <p>Caso você tenha o saldo mínimo, a transferencia pix foi realizada para a chave cadastrada. Caso não tenha a quantia, volte amanhã para avaliar mais fotos!</p>
+        <h2>Saque mínimo: R$2500</h2>
+        <p>Você não atingiu o valor mínimo. Tente novamente assim que alcançar a meta de saldo</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -106,8 +106,8 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
             <div class="card" style="border-radius:25px;border-color:#292929" >
                 <div style="background-color:#292929;border-radius:20px"class="card-body">
                     <p style="color:#ffc432" class="card-text"><b>Seu progresso atual:</b></p>
-                    <span style="background-color: #ffc432; color:#000" class="badge">R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></span>
-                    <span style="background-color: green; color:#fff; margin-left:49%" class="badge">R$2500,00</span>
+                    <span style="background-color: #ffc432; color:#000" class="badge">R$ <?php echo number_format(($dados[0]['qtd'] * 10), 2, ',', ' ');?></span>
+                    <span style="background-color: green; color:#fff; margin-left:45%" class="badge">R$2500,00</span>
                     
                     <div method="post">
                     <div class="progress" style="margin-top:10px;height:30px">
