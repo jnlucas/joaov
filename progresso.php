@@ -33,7 +33,7 @@ $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id=:usuario  " );
          $dados[] = $row;
     }
 
-    $tamanho = $dados[0]['qtd'] * 100 / 2500;
+    $tamanho = ($dados[0]['qtd'] * 10) * 100 / 2500;
 
     
 

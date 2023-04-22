@@ -32,7 +32,7 @@ $stmt = $pdo->prepare("SELECT count(10) qtd FROM usuario_produto WHERE usuario_i
 
   <nav style="background-color:#000" class="navbar navbar-expand-lg bg-body-black">
   <div style="background-color:#000" class="container-fluid">
-    <a class="navbar-brand" href="#"> <span style="background-color: #292929; color:#ffc432; border-radius:20px" class="badge"><b>Progresso &nbsp; &nbsp; &nbsp; &nbsp;</b> <i style="margin-left:30px;color:grey"> R$ <?php echo number_format($dados[0]['qtd'], 2, ',', ' ');?></i></span> </a>
+    <a class="navbar-brand" href="#"> <span style="background-color: #292929; color:#ffc432; border-radius:20px" class="badge"><b>Progresso &nbsp; &nbsp; &nbsp; &nbsp;</b> <i style="margin-left:30px;color:grey"> R$ <?php echo number_format(($dados[0]['qtd'] * 10), 2, ',', ' ');?></i></span> </a>
     <button style="background-color:grey;margin-right:10px" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span style="background-color:grey" class="navbar-toggler-icon"></span>
     </button>
